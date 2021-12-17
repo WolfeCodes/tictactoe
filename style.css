@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Itim', cursive;
+    font-family: cursive;
 }
 
 .background {
@@ -33,9 +33,9 @@
 .container {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 33% 33% 33%;
-    max-width: 300px;
+    grid-template-columns: 32% 32% 32%;
+    grid-template-rows: 32% 32% 32%;
+    max-width: 500px;
 
 }
 
@@ -81,5 +81,5 @@
 }
 
 #reset {
-    background-color: #FF3860;
+    background-color: blue;
 }

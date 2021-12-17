@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let board = ['', '', '', '', '', '', '', '', ''];
     let currentPlayer = 'X';
-    let isGameActive = true;
+    let gameOn = true;
 
     const GryffindorX_WON = 'GryffindorX_WON';
     const SlytherinO_WON = 'SlytherinO_WON';
@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
         [2, 4, 6]
     ];
 
-    function handleResultValidation() {
+    function results() {
         let roundWon = false;
         for (let i = 0; i <= 7; i++) {
             const winCondition = winningConditions[i];
@@ -42,29 +42,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (roundWon) {
             announce(currentPlayer === 'X' ? GryffindorX_WON : SlytherinO_WON);
-            isGameActive = false;
+            gameOn = false;
             return;
         }
 
-    if (!board.includes(''))
+    if (board.includes(''))
         announce(TIE);
     }
 
     const announce = (type) => {
         switch(type){
             case SlytherinO_WON:
-                announcer.innerHTML = 'Slytherin <span class="playerO">O</span> Won';
+                announcer.innerHTML = 'Slytherin <span class="playerO">O</span> Won Mischief Managed!';
                 break;
             case GryffindorX_WON:
-                announcer.innerHTML = 'Gryffindor <span class="playerX">X</span> Won';
+                announcer.innerHTML = 'Gryffindor <span class="playerX">X</span> Won Mischief Managed!';
                 break;
             case TIE:
-                announcer.innerText = 'Tie';
+                announcer.innerText = 'We should be fighting voldemort!!';
         }
         announcer.classList.remove('hide');
     };
-
-    const isValidAction = (tile) => {
+    //Checking for valid moves
+    const legalMove = (tile) => {
         if (tile.innerText === 'X' || tile.innerText === 'O'){
             return false;
         }
@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const updateBoard =  (index) => {
         board[index] = currentPlayer;
     }
-
+    //changing to other players turn
     const changePlayer = () => {
         playerDisplay.classList.remove(`player${currentPlayer}`);
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
@@ -83,19 +83,19 @@ window.addEventListener('DOMContentLoaded', () => {
         playerDisplay.classList.add(`player${currentPlayer}`);
     }
 
-    const userAction = (tile, index) => {
-        if(isValidAction(tile) && isGameActive) {
+    const playerMove = (tile, index) => {
+        if(legalMove(tile) && gameOn) {
             tile.innerText = currentPlayer;
             tile.classList.add(`player${currentPlayer}`);
             updateBoard(index);
-            handleResultValidation();
+            results();
             changePlayer();
         }
     }
 
     const resetBoard = () => {
         board = ['', '', '', '', '', '', '', '', ''];
-        isGameActive = true;
+        gameOn = true;
         announcer.classList.add('hide');
 
         if (currentPlayer === 'O') {
@@ -110,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     tiles.forEach( (tile, index) => {
-        tile.addEventListener('click', () => userAction(tile, index));
+        tile.addEventListener('click', () => playerMove(tile, index));
     });
 
     resetButton.addEventListener('click', resetBoard);
