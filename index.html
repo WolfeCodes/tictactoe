@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -6,30 +6,30 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <script type="text/javascript"src="app.js"></script>
 
-    <main class="background">
-      <div class="title">
+
+    <main class="background" id="background">
+      <div class="title" id="title">
       <h1>Get Ticky Tacky & Toey</h1>
       </div>
-      <div class="display">
+      <div class="display" id="display">
         Player <span class="display-player playerX">X</span>'s turn
       </div>
-      <div class="container">
-        <div class="space">
-        <div class="space">
-        <div class="space">
-        <div class="space">
-        <div class="space">
-        <div class="space">
-        <div class="space">
-        <div class="space">
-        <div class="space">
+      <div class="container" id="container">
+        <div class="space" id="space">
+        <div class="space" id="space">
+        <div class="space" id="space">
+        <div class="space" id="space">
+        <div class="space" id="space">
+        <div class="space" id="space">
+        <div class="space" id="space">
+        <div class="space" id="space">
+        <div class="space" id="space">
         </div>
 
-        <div class="Game Over"></div>
-        <div class="controls">
-          <button id="reset">Reset</button>
+        <div class="winner" id="'winner'"></div>
+        <div class="controls" id="controls">
+          <button class="reset" id="reset">Reset</button>
 
         </div>
 
@@ -38,4 +38,38 @@
 
       </main>
   </body>
+</html> -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>WolfeTicTacToe</title>
+    <script type="text/javascript"src="app.js"></script>
+</head>
+<body>
+    <main class="background">
+        <section class="title">
+            <h1>I solemenly swear that im up to no good</h1>
+        </section>
+        <section class="display">
+            Gryffindor/ <span class="display-player playerX">X</span>'s turn
+        </section>
+        <section class="container">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </section>
+        <section class="display announcer hide"></section>
+        <section class="controls">
+            <button id="reset">Reset</button>
+        </section>
+    </main>
+</body>
 </html>
