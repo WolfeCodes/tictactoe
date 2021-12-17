@@ -6,6 +6,6 @@ You will either be house Gryffindor "X" or house Slytherin "O".
 May the best wizard win!
 Also watch out for gnargles, I hear they are troublesome creatures.
 
-#GameLink
+# GameLink
 
 (https://marcwolfe.github.io/tictactoe/)
