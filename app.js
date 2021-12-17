@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
+    alert('Welcome to Hogwarts TicTacToe')
     const tiles = Array.from(document.querySelectorAll('.tile'));
     const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
