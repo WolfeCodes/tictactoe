@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
         [2, 4, 6]
     ];
 
+    //Checking for game over or not
     function results() {
         let roundWon = false;
         for (let i = 0; i <= 7; i++) {
