@@ -9,7 +9,7 @@ Also watch out for gnargles, I hear they are troublesome creatures.
 HTML,
 CSS,
 JavaScript and
-BRAINPOWER!
+LiquidLuck!
 
 # GameLink
 
